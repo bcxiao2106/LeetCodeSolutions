@@ -9,7 +9,8 @@ public class ThreeSumII {
 
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> resultLst = new ArrayList<List<Integer>>();
-        if(nums.length < 3){
+        //if the length of array is less than 3, return the empty list
+		if(nums.length < 3){
         	return resultLst;
         }
         //Sort the array
@@ -22,40 +23,38 @@ public class ThreeSumII {
         	return resultLst;
         }
         
-        int pIdx = 0;
+        //find the start index of the positive elements
+        int pIdx = nums.length - 2;
         for(int p = 0; p < nums.length; p++){
         	if(nums[p] > 0){
         		pIdx = p;
         		break;
         	}
         }
-        if(pIdx == 0){
-            pIdx = nums.length - 2;
-        }
         
+        //Loop i from 0 to pIdx, cause the first (smallest) factor can not be positive
         for( int i = 0; i < pIdx; i++ ){
         	int firstVal = nums[i];
         	int j = i + 1;
         	int k = nums.length - 1;
-        	SECOND: while(j < k){
-        		int sum = nums[j] + nums[k];
-        		int requiredVal = 0 - firstVal;
-
-        		if(sum > requiredVal){
-        			k--;
-        		} else if(sum < requiredVal){
-        			j++;
-        		} else {
+        	SECOND: while(j < k){//loop, adjust j, k position to find the match of SUM = 0
+        		int sum = nums[j] + nums[k];//sum of current j,k
+        		int requiredVal = 0 - firstVal;//expected value to make nums[i] + requiredVal = 0
+        		if(sum > requiredVal){//if sum of j,k greater than the expected value
+        			k--;//move the bigger pointer to left (small value direction)
+        		} else if(sum < requiredVal){//if sum of j,k smaller than the expected value
+        			j++;//move the smaller pointer to right (bigger value direction)
+        		} else {//exactly equal (sum = requiredVal), then, save to the result list
         			ArrayList<Integer> temp = new ArrayList<Integer>();
     				temp.add(nums[i]);
     				temp.add(nums[j]);
     				temp.add(nums[k]);
-    				if(!resultLst.contains(temp)){
+    				if(!resultLst.contains(temp)){//if not exists, save
     					resultLst.add(temp);
     					//System.out.println("\t***** Right Match: [" + nums[i] + ", " + nums[j] + ", " + nums[k] + "]");
     				}
-    				j++;
-    				k--;
+    				j++;//keep searching
+    				k--;//keep searching
         		}
         	}
         }

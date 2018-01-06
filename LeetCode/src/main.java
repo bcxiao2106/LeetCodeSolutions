@@ -9,10 +9,10 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		//leetCodeN3();//3 Longest Substring Without Repeating Characters
-		//leetCodeN15();
+		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
+		leetCodeN15();	//15 3Sum
 		//binaryTreeSample();
-		ClockAngle();
+		//ClockAngle();
 	}
 	
 	/*
