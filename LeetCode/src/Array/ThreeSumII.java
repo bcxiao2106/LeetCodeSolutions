@@ -24,51 +24,40 @@ public class ThreeSumII {
         
         int pIdx = 0;
         for(int p = 0; p < nums.length; p++){
-        	if(nums[p] >= 0){
+        	if(nums[p] > 0){
         		pIdx = p;
         		break;
         	}
         }
+        if(pIdx == 0){
+            pIdx = nums.length - 2;
+        }
         
-        //[first factor + second factor + third factor] in ascending order, and sum(1,2,3) = 0
-        //loop, the first factor can not be positive
-        int i = 0, j = 0, k = 0;
-        while(nums[i] <= 0 && i < nums.length - 2){
-        	if(i > 0 && nums[i] == nums[i-1]){//repeated value, jump to next
-        		i++;
-        		continue;
-        	}
-        	SECOND: for(j = i + 1; j < nums.length - 1; j++){
-        		int requiredValue = 0 - (nums[i] + nums[j]);
-        		if(requiredValue >= 0 && requiredValue <= max){
-        			Random rdm = new Random();
-        			int start = pIdx > j + 1 ? pIdx : (j + 1);
-        			int pivot = (start) + rdm.nextInt(nums.length - start);
-        			//System.out.println(pivot);
-        			int s = 0, e = 0;
-        			if(requiredValue >= nums[pivot]){
-        				s = pivot;
-        				e = nums.length - 1;
-        			} else {
-        				s = start;
-        				e = pivot - 1;
-        			}
-	        		THIRD: for(k = s; k <= e; k++){        			
-	        			if(nums[k] == requiredValue){
-	        				ArrayList<Integer> temp = new ArrayList<Integer>();
-	        				temp.add(nums[i]);
-	        				temp.add(nums[j]);
-	        				temp.add(nums[k]);
-	        				if(!resultLst.contains(temp)){
-	        					resultLst.add(temp);
-	        					//System.out.println("\t***** Right Match: [" + nums[i] + ", " + nums[j] + ", " + nums[k] + "]");
-	        				}
-	        				break THIRD;
-	        			}
-	        		}
+        for( int i = 0; i < pIdx; i++ ){
+        	int firstVal = nums[i];
+        	int j = i + 1;
+        	int k = nums.length - 1;
+        	SECOND: while(j < k){
+        		int sum = nums[j] + nums[k];
+        		int requiredVal = 0 - firstVal;
+
+        		if(sum > requiredVal){
+        			k--;
+        		} else if(sum < requiredVal){
+        			j++;
+        		} else {
+        			ArrayList<Integer> temp = new ArrayList<Integer>();
+    				temp.add(nums[i]);
+    				temp.add(nums[j]);
+    				temp.add(nums[k]);
+    				if(!resultLst.contains(temp)){
+    					resultLst.add(temp);
+    					//System.out.println("\t***** Right Match: [" + nums[i] + ", " + nums[j] + ", " + nums[k] + "]");
+    				}
+    				j++;
+    				k--;
         		}
         	}
-        	i++;
         }
         System.out.println("resultLst.size: " + resultLst.size());
         return resultLst;
