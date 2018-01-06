@@ -21,7 +21,6 @@ public class Heapsort {
 		buildMaxHeap(array, 2 * r + 2, n);
 		pushDown(array, r, n);
 		return array;
-
 	}
 
 	private static void pushDown(int[] array, int r, int n) {

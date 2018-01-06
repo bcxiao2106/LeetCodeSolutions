@@ -1,5 +1,5 @@
 
-public class BinaryTreeNode {
+public class BinaryTreeNode{
 	private int key;
 	private String nValue;
 	private boolean isVisited;
