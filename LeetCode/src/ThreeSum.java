@@ -20,11 +20,11 @@ public class ThreeSum {
 				break;
 			}
 		}
-		System.out.println("End index is: " + endIdx);
+		//System.out.println("End index is: " + endIdx);
 		ArrayList<List<Integer>> resultLst = new ArrayList<List<Integer>>();
         int f = 0, s = 1, t = 2;
         while(f < endIdx){
-        	System.out.println(f + " + " + s + " + " + t);
+        	//System.out.println(f + " + " + s + " + " + t);
         	if(s > nums.length - 2){
                 f++;
                 s = f + 1;
