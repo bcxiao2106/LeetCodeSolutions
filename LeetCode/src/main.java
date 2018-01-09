@@ -13,8 +13,10 @@ public class main {
 		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
 		//leetCodeN5();		//5 Longest Palindromic Substring
 		//leetCodeN15();	//15 3Sum
-		//leetCodeN16();	//3Sum Closest
-		leetCodeN461();
+		//leetCodeN16();	//16 3Sum Closest
+		//leetCodeN461();	//461 Hamming Distance
+		leetCodeN617();		//617 Merge Two Binary Trees
+		//leetCodeN657();	//657 Judge Route Circle
 		//binaryTreeSample();
 		//ClockAngle();
 	}
@@ -115,6 +117,41 @@ public class main {
 	public static void leetCodeN461(){
 		HammingDistance hd = new HammingDistance();
 		hd.hammingDistance(3, 1);
+	}
+	
+	/*
+	 * LeetCode 617 Merge Two Binary Trees
+	 * https://leetcode.com/problems/merge-two-binary-trees/description/
+	 * 
+	 * Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
+	 * You need to merge them into a new binary tree. 
+	 * The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. 
+	 * Otherwise, the NOT null node will be used as the node of new tree.
+	 * 
+	 */
+	public static void leetCodeN617(){
+		MergeTwoBinaryTrees mtbt = new MergeTwoBinaryTrees();
+		Integer[] values = {1,3,2,5};
+		Integer[] values2 = {2,1,3,null,4,null,7};
+		MergeTwoBinaryTrees.TreeNode t1 = mtbt.createTree(values, 0);
+		MergeTwoBinaryTrees.TreeNode t2 = mtbt.createTree(values2, 0);
+		MergeTwoBinaryTrees.TreeNode newTreeRootNode = mtbt.mergeTrees(t1, t2);
+		mtbt.traverseTree(newTreeRootNode);
+	}
+	
+	/*
+	 * LeetCode 657 Judge Route Circle
+	 * https://leetcode.com/problems/judge-route-circle/description/
+	 * 
+	 * Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
+	 * The move sequence is represented by a string. And each move is represent by a character. 
+	 * The valid robot moves are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot makes a circle.
+	 * 
+	 */
+	public static void leetCodeN657(){
+		JudgeRouteCircle jrc = new JudgeRouteCircle();
+		boolean result = jrc.judgeCircle("URURDDLL");
+		System.out.println(result);
 	}
 	
 	public static void binaryTreeSample(){
