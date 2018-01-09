@@ -15,6 +15,7 @@ public class ThreeSumII {
         }
         //Sort the array
         Arrays.sort(nums);
+        //sort(nums, 0, nums.length - 1);
         
         //if the minimum element is positive OR maximum element is negative, impossible to find the matches
         int min = nums[0];
