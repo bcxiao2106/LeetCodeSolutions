@@ -4,6 +4,7 @@ import java.util.List;
 
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
+import String.StringToInteger;
 import interview.ClockAngle;
 
 public class main {
@@ -12,10 +13,11 @@ public class main {
 		
 		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
 		//leetCodeN5();		//5 Longest Palindromic Substring
+		leetCodeN8();		//8 String to Integer (atoi)
 		//leetCodeN15();	//15 3Sum
 		//leetCodeN16();	//16 3Sum Closest
 		//leetCodeN461();	//461 Hamming Distance
-		leetCodeN617();		//617 Merge Two Binary Trees
+		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();	//657 Judge Route Circle
 		//binaryTreeSample();
 		//ClockAngle();
@@ -46,6 +48,28 @@ public class main {
 	public static void leetCodeN5(){
 		LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
 		lps.longestPalindrome("abbadcb");
+	}
+	
+	/*
+	 * LeetCode 8 String to Integer (atoi)
+	 * https://leetcode.com/problems/string-to-integer-atoi/description/
+	 * 
+	 * implement atoi to convert a string to an integer
+	 *  
+	 */
+	public static void leetCodeN8(){
+		String str = "2147483648";
+		String str1 = "      -11919730356x";
+		String str2 = " b11228552307";
+		String str3 = "    010";
+		StringToInteger sti = new StringToInteger();
+		String test = str;
+		long start = System.nanoTime();
+		System.out.println("ATOI value: " + sti.myAtoi(test));
+		long end = System.nanoTime();
+		System.out.println("Total operation time (ms): " + (end - start));
+		//325105
+		//322460
 	}
 	
 	/*
