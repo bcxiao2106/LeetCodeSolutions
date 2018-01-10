@@ -44,7 +44,7 @@ public class StringToInteger {
         	sb.insert(0, '-');
         }
         String resultStr = sb.toString();
-        
+
         if(resultStr.equals("+") || resultStr.equals("-") || 
         		resultStr.length() == 0 || resultStr.equals("") || resultStr == null){
         	return 0;

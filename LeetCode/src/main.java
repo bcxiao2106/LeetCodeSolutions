@@ -4,6 +4,7 @@ import java.util.List;
 
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
+import String.LongestPalindromicSubstring;
 import String.StringToInteger;
 import interview.ClockAngle;
 
@@ -12,8 +13,8 @@ public class main {
 	public static void main(String[] args) {
 		
 		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
-		//leetCodeN5();		//5 Longest Palindromic Substring
-		leetCodeN8();		//8 String to Integer (atoi)
+		leetCodeN5();		//5 Longest Palindromic Substring
+		//leetCodeN8();		//8 String to Integer (atoi)
 		//leetCodeN15();	//15 3Sum
 		//leetCodeN16();	//16 3Sum Closest
 		//leetCodeN461();	//461 Hamming Distance
@@ -46,8 +47,22 @@ public class main {
 	 * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000 
 	 */
 	public static void leetCodeN5(){
+		String str = "abbadcb";
+		String str1 = "a";
+		String str2 = "bb";
+		String str3 = "abcda";
+		String str4 = "babadada";
+		String str5 = "ccc";
+		String str6 = "ibvjkmpyzsifuxcabqqpahjdeuzaybqsrsmbfplxycsafogotliyvhxjtkrbzqxlyfwujzhkdafhebvsdhkkdbhlhmaoxmbkqiwiusngkbdhlvxdyvnjrzvxmukvdfobzlmvnbnilnsyrgoygfdzjlymhprcpxsnxpcafctikxxybcusgjwmfklkffehbvlhvxfiddznwumxosomfbgxoruoqrhezgsgidgcfzbtdftjxeahriirqgxbhicoxavquhbkaomrroghdnfkknyigsluqebaqrtcwgmlnvmxoagisdmsokeznjsnwpxygjjptvyjjkbmkxvlivinmpnpxgmmorkasebngirckqcawgevljplkkgextudqaodwqmfljljhrujoerycoojwwgtklypicgkyaboqjfivbeqdlonxeidgxsyzugkntoevwfuxovazcyayvwbcqswzhytlmtmrtwpikgacnpkbwgfmpavzyjoxughwhvlsxsgttbcyrlkaarngeoaldsdtjncivhcfsaohmdhgbwkuemcembmlwbwquxfaiukoqvzmgoeppieztdacvwngbkcxknbytvztodbfnjhbtwpjlzuajnlzfmmujhcggpdcwdquutdiubgcvnxvgspmfumeqrofewynizvynavjzkbpkuxxvkjujectdyfwygnfsukvzflcuxxzvxzravzznpxttduajhbsyiywpqunnarabcroljwcbdydagachbobkcvudkoddldaucwruobfylfhyvjuynjrosxczgjwudpxaqwnboxgxybnngxxhibesiaxkicinikzzmonftqkcudlzfzutplbycejmkpxcygsafzkgudy";
+		String str7 = "kyyrjtdplseovzwjkykrjwhxquwxsfsorjiumvxjhjmgeueafubtonhlerrgsgohfosqssmizcuqryqomsipovhhodpfyudtusjhonlqabhxfahfcjqxyckycstcqwxvicwkjeuboerkmjshfgiglceycmycadpnvoeaurqatesivajoqdilynbcihnidbizwkuaoegmytopzdmvvoewvhebqzskseeubnretjgnmyjwwgcooytfojeuzcuyhsznbcaiqpwcyusyyywqmmvqzvvceylnuwcbxybhqpvjumzomnabrjgcfaabqmiotlfojnyuolostmtacbwmwlqdfkbfikusuqtupdwdrjwqmuudbcvtpieiwteqbeyfyqejglmxofdjksqmzeugwvuniaxdrunyunnqpbnfbgqemvamaxuhjbyzqmhalrprhnindrkbopwbwsjeqrmyqipnqvjqzpjalqyfvaavyhytetllzupxjwozdfpmjhjlrnitnjgapzrakcqahaqetwllaaiadalmxgvpawqpgecojxfvcgxsbrldktufdrogkogbltcezflyctklpqrjymqzyzmtlssnavzcquytcskcnjzzrytsvawkavzboncxlhqfiofuohehaygxidxsofhmhzygklliovnwqbwwiiyarxtoihvjkdrzqsnmhdtdlpckuayhtfyirnhkrhbrwkdymjrjklonyggqnxhfvtkqxoicakzsxmgczpwhpkzcntkcwhkdkxvfnjbvjjoumczjyvdgkfukfuldolqnauvoyhoheoqvpwoisniv";
+		String test = str7;
+		
+		System.out.println("Original String: " + test);
 		LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-		lps.longestPalindrome("abbadcb");
+		long start = System.currentTimeMillis();
+		System.out.println(lps.longestPalindrome(test));
+		long end = System.currentTimeMillis();
+		System.out.println("Total operation time (ms)" + (end - start));
 	}
 	
 	/*
