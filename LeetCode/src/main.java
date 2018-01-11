@@ -15,8 +15,9 @@ public class main {
 		
 		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
 		//leetCodeN5();		//5 Longest Palindromic Substring
-		leetCodeN7();		//7 Reverse Integer
+		//leetCodeN7();		//7 Reverse Integer
 		//leetCodeN8();		//8 String to Integer (atoi)
+		leetCodeN9();		//9 Palindorme Number
 		//leetCodeN15();	//15 3Sum
 		//leetCodeN16();	//16 3Sum Closest
 		//leetCodeN461();	//461 Hamming Distance
@@ -104,6 +105,18 @@ public class main {
 		System.out.println("Total operation time (ms): " + (end - start));
 		//325105
 		//322460
+	}
+	
+	public static void leetCodeN9(){
+		int num = 123321;
+		int num1 = 12312;
+		int num2 = 0;
+		int num3 = -8;
+		int num4 = 9;
+		int test = num;
+		PalindormeNumber pn = new PalindormeNumber();
+		boolean result = pn.isPalindrome(test);
+		System.out.println("Is " + test + " a Palindorme number? " + result);
 	}
 	
 	/*
