@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
 import String.LongestPalindromicSubstring;
@@ -13,7 +14,8 @@ public class main {
 	public static void main(String[] args) {
 		
 		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
-		leetCodeN5();		//5 Longest Palindromic Substring
+		//leetCodeN5();		//5 Longest Palindromic Substring
+		leetCodeN7();		//7 Reverse Integer
 		//leetCodeN8();		//8 String to Integer (atoi)
 		//leetCodeN15();	//15 3Sum
 		//leetCodeN16();	//16 3Sum Closest
@@ -63,6 +65,23 @@ public class main {
 		System.out.println(lps.longestPalindrome(test));
 		long end = System.currentTimeMillis();
 		System.out.println("Total operation time (ms)" + (end - start));
+	}
+	
+	/*
+	 * LeetCode 7 Reverse Integer
+	 * https://leetcode.com/problems/reverse-integer/description/
+	 * 
+	 * Given a 32-bit signed integer, reverse digits of an integer.
+	 * 
+	 */
+	public static void leetCodeN7(){
+		int num = -120;
+		int num1 = +120;
+		int num2 = -01020;
+		int num3 = -123;
+		int test = num3;
+		ReverseInteger ri = new ReverseInteger();
+		System.out.println(ri.reverse(test));
 	}
 	
 	/*
