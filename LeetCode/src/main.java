@@ -5,7 +5,9 @@ import java.util.List;
 import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
+import String.LongestCommonPrefix;
 import String.LongestPalindromicSubstring;
+import String.RomanToInteger;
 import String.StringToInteger;
 import interview.ClockAngle;
 
@@ -13,16 +15,19 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		//leetCodeN3();		//3 Longest Substring Without Repeating Characters
-		//leetCodeN5();		//5 Longest Palindromic Substring
-		//leetCodeN7();		//7 Reverse Integer
-		//leetCodeN8();		//8 String to Integer (atoi)
-		leetCodeN9();		//9 Palindorme Number
-		//leetCodeN15();	//15 3Sum
-		//leetCodeN16();	//16 3Sum Closest
-		//leetCodeN461();	//461 Hamming Distance
+		//leetCodeN3();			//3 Longest Substring Without Repeating Characters
+		//leetCodeN5();			//5 Longest Palindromic Substring
+		//leetCodeN7();			//7 Reverse Integer
+		//leetCodeN8();			//8 String to Integer (atoi)
+		//leetCodeN9();			//9 Palindorme Number
+		//leetCodeN10();		//10 Regular Expression Matching X
+		//leetCodeN13();		//13 Roman to Integer
+		leetCodeN14();			//14 Longest Common Prefix
+		//leetCodeN15();		//15 3Sum
+		//leetCodeN16();		//16 3Sum Closest
+		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
-		//leetCodeN657();	//657 Judge Route Circle
+		//leetCodeN657();		//657 Judge Route Circle
 		//binaryTreeSample();
 		//ClockAngle();
 	}
@@ -106,7 +111,14 @@ public class main {
 		//325105
 		//322460
 	}
-	
+
+	/*
+	 * LeetCode 9 Palindrome Number
+	 * https://leetcode.com/problems/palindrome-number/description/
+	 * 
+	 * Determine whether an integer is a palindrome. Do this without extra space.
+	 * 
+	 */
 	public static void leetCodeN9(){
 		int num = 123321;
 		int num1 = 12312;
@@ -117,6 +129,76 @@ public class main {
 		PalindormeNumber pn = new PalindormeNumber();
 		boolean result = pn.isPalindrome(test);
 		System.out.println("Is " + test + " a Palindorme number? " + result);
+	}
+	
+	/*
+	 * LeetCode 10 Regular Expression Matching
+	 * https://leetcode.com/problems/regular-expression-matching/description/
+	 * 
+	 * Implement regular expression matching with support for '.' and '*'..
+	 * '.' Matches any single character.
+	 * '*' Matches zero or more of the preceding element.
+	 * 
+	 */
+	public static void leetCodeN10(){
+		String s1 = "aa";//false
+		String p1 = ".*c";
+		
+		String s2 = "aaaaa";//true
+		String p2 = "a*a";
+		
+		String s3 = "aaa";//false
+		String p3 = "aaaa";
+		
+		String s4 = "aaa";//true
+		String p4 = "ab*ac*a";
+		
+		String s5 = "aaba";//false
+		String p5 = "ab*a*c*a";
+		
+		String s6 = "aaa";//true
+		String p6 = "ab*a*c*a";
+		
+		String s7 = "bbbba";//true
+		String p7 = ".*a*a";
+		
+		String s8 = "ab";//true
+		String p8 = ".*..";
+		
+		String test1 = s8;
+		String test2 = p8;
+		System.out.println(test1);
+		System.out.println(test2);
+		RegularExpressionMatching rem = new RegularExpressionMatching();
+		System.out.println(rem.isMatch(test1, test2));
+	}
+	
+	/*
+	 * LeetCode 13 Roman to Integer
+	 * https://leetcode.com/problems/roman-to-integer/description/
+	 * 
+	 * Given a roman numeral, convert it to an integer.
+	 * Input is guaranteed to be within the range from 1 to 3999.
+	 * 
+	 */
+	public static void leetCodeN13(){
+		String s = "MMIM";
+		RomanToInteger rti = new RomanToInteger();
+		System.out.println("Roman Number String: " + s);
+		System.out.println("Integer: " + rti.romanToInt(s));
+	}
+	
+	/*
+	 * LeetCode 14 Longest Common Prefix
+	 * https://leetcode.com/problems/longest-common-prefix/description/
+	 * 
+	 * Write a function to find the longest common prefix string amongst an array of strings
+	 * 
+	 */
+	public static void leetCodeN14(){
+		String[] strs = {"String", "Str", "Stri"};
+		LongestCommonPrefix lcp = new LongestCommonPrefix();
+		System.out.println(lcp.longestCommonPrefix(strs));
 	}
 	
 	/*
