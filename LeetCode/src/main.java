@@ -5,10 +5,12 @@ import java.util.List;
 import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
+import String.IntegerToRoman;
 import String.LongestCommonPrefix;
 import String.LongestPalindromicSubstring;
 import String.RomanToInteger;
 import String.StringToInteger;
+import String.ValidParentheses;
 import interview.ClockAngle;
 
 public class main {
@@ -21,15 +23,18 @@ public class main {
 		//leetCodeN8();			//8 String to Integer (atoi)
 		//leetCodeN9();			//9 Palindorme Number
 		//leetCodeN10();		//10 Regular Expression Matching X
+		//leetCodeN12();		// 12 Integer to Roman
 		//leetCodeN13();		//13 Roman to Integer
-		leetCodeN14();			//14 Longest Common Prefix
+		//leetCodeN14();		//14 Longest Common Prefix
 		//leetCodeN15();		//15 3Sum
 		//leetCodeN16();		//16 3Sum Closest
+		leetCodeN20();				//20 Valid Parentheses
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
 		//binaryTreeSample();
 		//ClockAngle();
+		//System.out.println(Integer.toBinaryString(-128));
 	}
 	
 	/*
@@ -165,12 +170,48 @@ public class main {
 		String s8 = "ab";//true
 		String p8 = ".*..";
 		
-		String test1 = s8;
-		String test2 = p8;
+		String s9 = "ab";//true
+		String p9 = ".*..c*";
+		
+		String s10 = "aasdfasdfasdfasdfas";//true
+		String p10 = "aasdf.*asdf.*asdf.*asdf.*s";
+		
+		String s11 = "abcd";//false
+		String p11 = "d*";
+		
+		String s12 = "abbbcd";//true
+		String p12 = "ab*bbbcd";
+		
+		String s13 = "abcdede";//true
+		String p13 = "ab.*de";
+		
+		String test1 = s13;
+		String test2 = p13;
 		System.out.println(test1);
 		System.out.println(test2);
 		RegularExpressionMatching rem = new RegularExpressionMatching();
 		System.out.println(rem.isMatch(test1, test2));
+		//System.out.println(rem.isMatchII(test1, test2));
+	}
+	
+	/*
+	 * LeetCode 12 Integer to Roman
+	 * https://leetcode.com/problems/integer-to-roman/description/
+	 * 
+	 * Given an integer, convert it to a roman numeral.
+	 * Input is guaranteed to be within the range from 1 to 3999.
+	 * 
+	 */
+	public static void leetCodeN12(){
+		int num = 3999;
+		IntegerToRoman itr = new IntegerToRoman();
+		long start = System.currentTimeMillis();
+		String result = itr.intToRoman(num);
+		long end = System.currentTimeMillis();
+		
+		System.out.println("Integer: " + num);
+		System.out.println("Roman Number String: " + result);
+		System.out.println("Total operation time (ms): " + (end - start));
 	}
 	
 	/*
@@ -258,6 +299,20 @@ public class main {
 		System.out.println("Total time (ms): " + (end - start) + "\n");
 	}
 
+	/*
+	 * LeetCode 20 Valid Parentheses	
+	 * https://leetcode.com/problems/valid-parentheses/description/
+	 * 
+	 * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+	 * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+	 * 
+	 */
+	public static void leetCodeN20(){
+		ValidParentheses vp = new ValidParentheses();
+		String s = "{[()[]{}]}";
+		System.out.println(vp.isValid(s));
+	}
+	
 	/*
 	 * LeetCode 461 Hamming Distance
 	 * https://leetcode.com/problems/hamming-distance/description/

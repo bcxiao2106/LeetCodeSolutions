@@ -3,7 +3,6 @@ package Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class ThreeSumII {
 
@@ -15,45 +14,27 @@ public class ThreeSumII {
         }
         //Sort the array
         Arrays.sort(nums);
-        //sort(nums, 0, nums.length - 1);
-        
-        //if the minimum element is positive OR maximum element is negative, impossible to find the matches
-        int min = nums[0];
-        int max = nums[nums.length - 1];
-        if(min > 0 || max < 0){
-        	return resultLst;
-        }
-        
-        //find the start index of the positive elements
-        int pIdx = nums.length - 2;
-        for(int p = 0; p < nums.length; p++){
-        	if(nums[p] > 0){
-        		pIdx = p;
-        		break;
-        	}
-        }
         
         //Loop i from 0 to pIdx, cause the first (smallest) factor can not be positive
-        for( int i = 0; i < pIdx; i++ ){
+        for( int i = 0; i < nums.length - 2; i++ ){
+        	if(i > 0 && nums[i] == nums[i - 1]){
+        		continue;
+        	}
         	int firstVal = nums[i];
+        	if(firstVal > 0){
+        		break;
+        	}
         	int j = i + 1;
         	int k = nums.length - 1;
-        	SECOND: while(j < k){//loop, adjust j, k position to find the match of SUM = 0
+        	while(j < k){//loop, adjust j, k position to find the match of SUM = 0
         		int sum = nums[j] + nums[k];//sum of current j,k
         		int requiredVal = 0 - firstVal;//expected value to make nums[i] + requiredVal = 0
-        		if(sum > requiredVal){//if sum of j,k greater than the expected value
+        		if(sum > requiredVal || (k < nums.length - 1 && nums[k] == nums[k + 1])){//if sum of j,k greater than the expected value
         			k--;//move the bigger pointer to left (small value direction)
-        		} else if(sum < requiredVal){//if sum of j,k smaller than the expected value
+        		} else if(sum < requiredVal || (j > i + 1 && nums[j] == nums[j - 1])){//if sum of j,k smaller than the expected value
         			j++;//move the smaller pointer to right (bigger value direction)
         		} else {//exactly equal (sum = requiredVal), then, save to the result list
-        			ArrayList<Integer> temp = new ArrayList<Integer>();
-    				temp.add(nums[i]);
-    				temp.add(nums[j]);
-    				temp.add(nums[k]);
-    				if(!resultLst.contains(temp)){//if not exists, save
-    					resultLst.add(temp);
-    					//System.out.println("\t***** Right Match: [" + nums[i] + ", " + nums[j] + ", " + nums[k] + "]");
-    				}
+        			resultLst.add(Arrays.asList(nums[i], nums[j], nums[k]));
     				j++;//keep searching
     				k--;//keep searching
         		}
