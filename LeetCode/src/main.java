@@ -5,12 +5,7 @@ import java.util.List;
 import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
-import String.IntegerToRoman;
-import String.LongestCommonPrefix;
-import String.LongestPalindromicSubstring;
-import String.RomanToInteger;
-import String.StringToInteger;
-import String.ValidParentheses;
+import String.*;
 import interview.ClockAngle;
 
 public class main {
@@ -19,6 +14,7 @@ public class main {
 		
 		//leetCodeN3();			//3 Longest Substring Without Repeating Characters
 		//leetCodeN5();			//5 Longest Palindromic Substring
+		leetCodeN6();			//6 ZigZag Conversion
 		//leetCodeN7();			//7 Reverse Integer
 		//leetCodeN8();			//8 String to Integer (atoi)
 		//leetCodeN9();			//9 Palindorme Number
@@ -28,7 +24,7 @@ public class main {
 		//leetCodeN14();		//14 Longest Common Prefix
 		//leetCodeN15();		//15 3Sum
 		//leetCodeN16();		//16 3Sum Closest
-		leetCodeN20();				//20 Valid Parentheses
+		//leetCodeN20();		//20 Valid Parentheses
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
@@ -76,6 +72,22 @@ public class main {
 		System.out.println(lps.longestPalindrome(test));
 		long end = System.currentTimeMillis();
 		System.out.println("Total operation time (ms)" + (end - start));
+	}
+	
+	/*
+	 * LeetCode 6 ZigZag Conversion
+	 * https://leetcode.com/problems/zigzag-conversion/description/
+	 * 
+	 * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+	 *  
+	 */
+	public static void leetCodeN6(){
+		String str1 = "0123456789ABCDEFGHI";
+		String str2 = "ABCDE";
+		String str3 = "ABC";
+		String test = str1;
+		System.out.println("Original string: " + test);
+		System.out.println("ZigZag string: " + ZigZagConversion.convert(test, 3));
 	}
 	
 	/*
