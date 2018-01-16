@@ -14,17 +14,19 @@ public class main {
 		
 		//leetCodeN3();			//3 Longest Substring Without Repeating Characters
 		//leetCodeN5();			//5 Longest Palindromic Substring
-		leetCodeN6();			//6 ZigZag Conversion
+		//leetCodeN6();			//6 ZigZag Conversion
 		//leetCodeN7();			//7 Reverse Integer
 		//leetCodeN8();			//8 String to Integer (atoi)
 		//leetCodeN9();			//9 Palindorme Number
 		//leetCodeN10();		//10 Regular Expression Matching X
-		//leetCodeN12();		// 12 Integer to Roman
+		//leetCodeN12();		//12 Integer to Roman
 		//leetCodeN13();		//13 Roman to Integer
 		//leetCodeN14();		//14 Longest Common Prefix
 		//leetCodeN15();		//15 3Sum
 		//leetCodeN16();		//16 3Sum Closest
+		leetCodeN17();			//17 Letter Combinations of a Phone Number
 		//leetCodeN20();		//20 Valid Parentheses
+		//leetCodeN21();		//21 Merge Two Sorted Lists	
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
@@ -197,8 +199,20 @@ public class main {
 		String s13 = "abcdede";//true
 		String p13 = "ab.*de";
 		
-		String test1 = s13;
-		String test2 = p13;
+		String s14 = "aa";//true
+		String p14 = ".c*c";
+		
+		String s15 = "ab";//true
+		String p15 = ".*b*";
+		
+		String s16 = "bbba";//true
+		String p16 = ".*b";
+		
+		String s17 = "acaabbaccbbacaabbbb";
+		String p17 = "a*.*b*.*a*aa*a*";
+						
+		String test1 = s17;
+		String test2 = p17;
 		System.out.println(test1);
 		System.out.println(test2);
 		RegularExpressionMatching rem = new RegularExpressionMatching();
@@ -226,6 +240,7 @@ public class main {
 		System.out.println("Total operation time (ms): " + (end - start));
 	}
 	
+	
 	/*
 	 * LeetCode 13 Roman to Integer
 	 * https://leetcode.com/problems/roman-to-integer/description/
@@ -241,6 +256,7 @@ public class main {
 		System.out.println("Integer: " + rti.romanToInt(s));
 	}
 	
+	
 	/*
 	 * LeetCode 14 Longest Common Prefix
 	 * https://leetcode.com/problems/longest-common-prefix/description/
@@ -253,6 +269,7 @@ public class main {
 		LongestCommonPrefix lcp = new LongestCommonPrefix();
 		System.out.println(lcp.longestCommonPrefix(strs));
 	}
+	
 	
 	/*
 	 * LeetCode 15 3Sum
@@ -287,6 +304,7 @@ public class main {
 		System.out.println("Sorted Array:" + Arrays.toString(test));
 	}
 
+	
 	/*
 	 * LeetCode 16 3Sum Closest
 	 * https://leetcode.com/problems/3sum/description/
@@ -311,6 +329,21 @@ public class main {
 		System.out.println("Total time (ms): " + (end - start) + "\n");
 	}
 
+	
+	/*
+	 * LeetCode 17 Letter Combinations of a Phone Number
+	 * https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+	 * 
+	 * Given a digit string, return all possible letter combinations that the number could represent.
+	 * A mapping of digit to letters (just like on the telephone buttons) is given below.
+	 * Input:Digit string "23"
+	 * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+	 * 
+	 */
+	public static void leetCodeN17(){
+		LetterCombinationsofaPhoneNumber.letterCombinations("2345");
+	}
+	
 	/*
 	 * LeetCode 20 Valid Parentheses	
 	 * https://leetcode.com/problems/valid-parentheses/description/
@@ -323,6 +356,26 @@ public class main {
 		ValidParentheses vp = new ValidParentheses();
 		String s = "{[()[]{}]}";
 		System.out.println(vp.isValid(s));
+	}
+	
+	
+	/*
+	 * LeetCode 21 Merge Two Sorted Lists
+	 * https://leetcode.com/problems/merge-two-sorted-lists/description/
+	 * 
+	 * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+	 * Input: 1->2->4, 1->3->4
+	 * Output: 1->1->2->3->4->4
+	 * 
+	 */
+	public static void leetCodeN21(){
+		int[] intArr1 = {1,3,5,6,7};
+		int[] intArr2 = {2,4,6,8,10};
+		MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
+		MergeTwoSortedLists.ListNode l1 = mtsl.buildList(intArr1);
+		MergeTwoSortedLists.ListNode l2 = mtsl.buildList(intArr2);
+		MergeTwoSortedLists.ListNode newNode = mtsl.mergeTwoLists(l1, l2);
+		mtsl.printList(newNode);
 	}
 	
 	/*
@@ -338,6 +391,7 @@ public class main {
 		HammingDistance hd = new HammingDistance();
 		hd.hammingDistance(3, 1);
 	}
+	
 	
 	/*
 	 * LeetCode 617 Merge Two Binary Trees
@@ -359,6 +413,7 @@ public class main {
 		mtbt.traverseTree(newTreeRootNode);
 	}
 	
+	
 	/*
 	 * LeetCode 657 Judge Route Circle
 	 * https://leetcode.com/problems/judge-route-circle/description/
@@ -373,6 +428,7 @@ public class main {
 		boolean result = jrc.judgeCircle("URURDDLL");
 		System.out.println(result);
 	}
+	
 	
 	public static void binaryTreeSample(){
 		BinaryTreeNode root = new BinaryTreeNode(1,"1");
@@ -428,6 +484,7 @@ public class main {
 		System.out.println("\nPost order Traverse:");
 		bt.nonRecPostOrder(root);
 	}
+	
 	
 	public static void ClockAngle(){
 		ClockAngle.findSmallerAngle(1, 5);

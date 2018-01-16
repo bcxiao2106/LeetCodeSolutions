@@ -95,9 +95,11 @@ public class RegularExpressionMatching {
     }
 
 	public boolean isMatch(String s, String p){
-		if(s.equals(p.replaceAll(".\\*", ""))){
+		String pureChars = p.replaceAll(".\\*", "");
+		if(s.equals(pureChars)){
 			return true;
 		}
+		
         char[] sArr = s.toCharArray();
 		char[] pArr = p.toCharArray();
 		int ls = sArr.length, lp = pArr.length;
@@ -133,6 +135,15 @@ public class RegularExpressionMatching {
         			} else {
         				if(j < lp - 2){
         					j = j + 2;
+        				} else if(j == lp - 2 && superMatch){
+        					if(pArr[lp - 1] == '*' || pArr[lp - 1] == sArr[ls - 1]){
+        						result = true;
+            					break;
+        					} else {
+        						result = false;
+            					break;
+        					}
+        					
         				} else {
         					result = false;
         					break;
@@ -165,7 +176,7 @@ public class RegularExpressionMatching {
         		System.out.println("\tCurrent [i, j]: " + i + "," + j);
             	System.out.println("\trepeatMatch is: " + repeatMatch);
             	System.out.println("\tStar char is: " + starChar);
-        		if(pArr[j] == starChar){
+        		if(pArr[j] == starChar && j < lp - 1){
         			j ++;
         			continue;
         		} else {
@@ -183,7 +194,11 @@ public class RegularExpressionMatching {
         	}
         	if(j == lp && i < ls){
         		System.out.println("Star char is: " + starChar);
-        		result = false;
+        		if(superMatch && (pArr[lp - 1] == sArr[ls - 1] || pArr[lp - 1] == '.')){
+        			result = true;
+        		} else {
+        			result = false;
+        		}
         		break;
         	}
         }
