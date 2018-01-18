@@ -24,7 +24,6 @@ public class FourSum {
                 		l --;
                 		continue INNER;
                 	}
-                	
                 	int tempValue = nums[k] + nums[l];
                 	if(tempValue > requiredValue){
                 		l --;

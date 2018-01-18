@@ -25,10 +25,11 @@ public class main {
 		//leetCodeN14();		//14 Longest Common Prefix
 		//leetCodeN15();		//15 3Sum
 		//leetCodeN16();		//16 3Sum Closest
-		//leetCodeN17();			//17 Letter Combinations of a Phone Number
-		leetCodeN18();			//18 4 Sum
+		//leetCodeN17();		//17 Letter Combinations of a Phone Number
+		//leetCodeN18();		//18 4 Sum
 		//leetCodeN20();		//20 Valid Parentheses
 		//leetCodeN21();		//21 Merge Two Sorted Lists	
+		leetCodeN22();
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
@@ -399,6 +400,10 @@ public class main {
 		MergeTwoSortedLists.ListNode l2 = mtsl.buildList(intArr2);
 		MergeTwoSortedLists.ListNode newNode = mtsl.mergeTwoLists(l1, l2);
 		mtsl.printList(newNode);
+	}
+	
+	public static void leetCodeN22(){
+		List<String> result = GenerateParentheses.generateParenthesis(4);
 	}
 	
 	/*
