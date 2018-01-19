@@ -8,6 +8,7 @@ import Array.ThreeSumClosest;
 import Array.ThreeSumII;
 import String.*;
 import interview.ClockAngle;
+import util.ListNode;
 
 public class main {
 
@@ -29,7 +30,8 @@ public class main {
 		//leetCodeN18();		//18 4 Sum
 		//leetCodeN20();		//20 Valid Parentheses
 		//leetCodeN21();		//21 Merge Two Sorted Lists	
-		leetCodeN22();
+		//leetCodeN22();		//22 Generate Parentheses 
+		leetCodeN23();			//23 Merge k Sorted Lists
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
@@ -404,6 +406,27 @@ public class main {
 	
 	public static void leetCodeN22(){
 		List<String> result = GenerateParentheses.generateParenthesis(4);
+	}
+	
+	public static void leetCodeN23(){
+		MergekSortedLists msl = new MergekSortedLists();
+		ListNode l1 = ListNode.buildList(new int[]{1,2,3,8,12});
+		ListNode l2 = ListNode.buildList(new int[]{1,4,5,10});
+		ListNode l3 = ListNode.buildList(new int[]{6,7,9,13});
+		ListNode l4 = ListNode.buildList(new int[]{6,18,19});
+		ListNode l5 = ListNode.buildList(new int[]{1,2,2,2});
+		//ListNode l6 = ListNode.buildList(new int[]{});
+		ListNode[] lists = {l1,l2,l3,l4,null};
+		ListNode[] lists2 = {l5,null};
+		//ListNode.printList(l1);
+		//ListNode.printList(l2);
+		//ListNode.printList(l3);
+		//ListNode.printList(l4);
+		ListNode result = msl.mergeKLists(lists2);
+		ListNode result2 = msl.mergeKLists(lists);
+		ListNode.printList(result);
+		ListNode.printList(result2);
+		//System.out.println(result.val);
 	}
 	
 	/*
