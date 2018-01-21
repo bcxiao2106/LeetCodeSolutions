@@ -31,7 +31,9 @@ public class main {
 		//leetCodeN20();		//20 Valid Parentheses
 		//leetCodeN21();		//21 Merge Two Sorted Lists	
 		//leetCodeN22();		//22 Generate Parentheses 
-		leetCodeN23();			//23 Merge k Sorted Lists
+		//leetCodeN23();			//23 Merge k Sorted Lists
+		//leetCodeN29();			//29 Divide two integers
+		leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
@@ -274,8 +276,7 @@ public class main {
 		LongestCommonPrefix lcp = new LongestCommonPrefix();
 		System.out.println(lcp.longestCommonPrefix(strs));
 	}
-	
-	
+		
 	/*
 	 * LeetCode 15 3Sum
 	 * https://leetcode.com/problems/3sum/description/
@@ -308,7 +309,6 @@ public class main {
 		
 		System.out.println("Sorted Array:" + Arrays.toString(test));
 	}
-
 	
 	/*
 	 * LeetCode 16 3Sum Closest
@@ -333,7 +333,6 @@ public class main {
 		long end = System.currentTimeMillis();
 		System.out.println("Total time (ms): " + (end - start) + "\n");
 	}
-
 	
 	/*
 	 * LeetCode 17 Letter Combinations of a Phone Number
@@ -427,6 +426,14 @@ public class main {
 		ListNode.printList(result);
 		ListNode.printList(result2);
 		//System.out.println(result.val);
+	}
+	
+	public static void leetCodeN29(){
+		System.out.println(DivideTwoIntegers.divide(2147483647, 2));
+	}
+	
+	public static void leetCodeN441(){
+		System.out.println(ArrangingCoins.arrangeCoins(1));
 	}
 	
 	/*
