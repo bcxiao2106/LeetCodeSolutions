@@ -33,13 +33,19 @@ public class main {
 		//leetCodeN22();		//22 Generate Parentheses 
 		//leetCodeN23();			//23 Merge k Sorted Lists
 		//leetCodeN29();			//29 Divide two integers
-		leetCodeN441();
+		//leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
+		leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
 		//binaryTreeSample();
 		//ClockAngle();
 		//System.out.println(Integer.toBinaryString(-128));
+		int a = 3;
+		for(int i  = 0; i < 5; i ++){
+			System.out.println(Integer.toBinaryString(a) + " = " + a);
+			a = a << 1;
+		}
 	}
 	
 	/*
@@ -487,6 +493,9 @@ public class main {
 		System.out.println(result);
 	}
 	
+	public static void leetCodeN762(){
+		System.out.println(PrimeNumberofSetBitsinBinaryRepresentation.countPrimeSetBits(10, 15));
+	}
 	
 	public static void binaryTreeSample(){
 		BinaryTreeNode root = new BinaryTreeNode(1,"1");
