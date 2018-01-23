@@ -35,17 +35,20 @@ public class main {
 		//leetCodeN29();			//29 Divide two integers
 		//leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
+		leetCodeN481();			//481 Magical String
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
-		leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
+		//leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
 		//binaryTreeSample();
 		//ClockAngle();
 		//System.out.println(Integer.toBinaryString(-128));
+		/*
 		int a = 3;
 		for(int i  = 0; i < 5; i ++){
 			System.out.println(Integer.toBinaryString(a) + " = " + a);
 			a = a << 1;
 		}
+		*/
 	}
 	
 	/*
@@ -456,6 +459,9 @@ public class main {
 		hd.hammingDistance(3, 1);
 	}
 	
+	public static void leetCodeN481(){
+		System.out.println(MagicalString.magicalStringIII(25));
+	}
 	
 	/*
 	 * LeetCode 617 Merge Two Binary Trees
@@ -551,8 +557,7 @@ public class main {
 		System.out.println("\nPost order Traverse:");
 		bt.nonRecPostOrder(root);
 	}
-	
-	
+		
 	public static void ClockAngle(){
 		ClockAngle.findSmallerAngle(1, 5);
 		ClockAngle.findEqualTimes();
