@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class DesignTinyURL {
 
-	private Hashtable<String, String> UrlHt;
+	private Hashtable<String, String> urlHt;
 	public DesignTinyURL(){
-		this.UrlHt = new Hashtable<String, String>();
+		this.urlHt = new Hashtable<String, String>();
 	}
 	
 	// Encodes a URL to a shortened URL.
@@ -23,12 +23,12 @@ public class DesignTinyURL {
         rdmChars[4] = (char)('a' + rdm.nextInt(26));
         rdmChars[5] = (char)('a' + rdm.nextInt(26));
         urlStr.append(rdmChars);
-        UrlHt.put(urlStr.toString(), longUrl);
+        urlHt.put(urlStr.toString(), longUrl);
         return urlStr.toString();
     }
 
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
-        return this.UrlHt.get(shortUrl);
+        return this.urlHt.get(shortUrl);
     }
 }
