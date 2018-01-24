@@ -35,7 +35,8 @@ public class main {
 		//leetCodeN29();			//29 Divide two integers
 		//leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
-		leetCodeN481();			//481 Magical String
+		//leetCodeN481();			//481 Magical String
+		leetCodeN535();			//535 Encode and Decode TinyURL
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
 		//leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
@@ -461,6 +462,11 @@ public class main {
 	
 	public static void leetCodeN481(){
 		System.out.println(MagicalString.magicalStringIII(25));
+	}
+	
+	public static void leetCodeN535(){
+		DesignTinyURL dtu = new DesignTinyURL();
+		System.out.println(dtu.decode(dtu.encode("https://leetcode.com/problems/design-tinyurl")));
 	}
 	
 	/*
