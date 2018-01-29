@@ -7,8 +7,10 @@ import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
 import String.*;
+import BinaryTree.*;
 import interview.ClockAngle;
 import util.ListNode;
+import util.TreeNode;
 
 public class main {
 
@@ -33,12 +35,16 @@ public class main {
 		//leetCodeN22();		//22 Generate Parentheses 
 		//leetCodeN23();			//23 Merge k Sorted Lists
 		//leetCodeN29();			//29 Divide two integers
+		//leetCodeN388();				//388 Longest Absolute File Path
+		leetCodeN393();			//393 UTF-8 Validation
 		//leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN481();			//481 Magical String
-		leetCodeN535();			//535 Encode and Decode TinyURL
+		//leetCodeN535();			//535 Encode and Decode TinyURL
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
+		//leetCodeN686();			//686 Repeated String Match
+		//leetCodeN687();			//687 Longest Univalue Path
 		//leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
 		//binaryTreeSample();
 		//ClockAngle();
@@ -442,6 +448,18 @@ public class main {
 		System.out.println(DivideTwoIntegers.divide(2147483647, 2));
 	}
 	
+	public static void leetCodeN388(){
+		LongestAbsoluteFilePath.lengthLongestPath("");
+	}
+	
+	public static void leetCodeN393(){
+		int[] intArr = new int[] {247,130,130,130};
+		for(int i  = 0; i < intArr.length; i ++){
+			System.out.println(String.format("%8s", Integer.toBinaryString(intArr[i] & 0xFF)).replace(' ', '0'));
+		}
+		System.out.println(UTF8Validation.validUtf8(intArr));
+	}
+	
 	public static void leetCodeN441(){
 		System.out.println(ArrangingCoins.arrangeCoins(1));
 	}
@@ -503,6 +521,29 @@ public class main {
 		JudgeRouteCircle jrc = new JudgeRouteCircle();
 		boolean result = jrc.judgeCircle("URURDDLL");
 		System.out.println(result);
+	}
+	
+	public static void leetCodeN686(){
+		System.out.println(RepeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab"));
+	}
+	
+	public static void leetCodeN687(){
+		TreeNode root = new TreeNode(5);
+		TreeNode node1 = new TreeNode(4);
+		TreeNode node2 = new TreeNode(5);
+		TreeNode node3 = new TreeNode(1);
+		TreeNode node4 = new TreeNode(1);
+		TreeNode node5 = new TreeNode(5);
+		TreeNode node6 = new TreeNode(5);
+		
+		root.left = node1;
+		root.right = node2;
+		node1.left = node3;
+		node1.right = node4;
+		node2.right = node5;
+		node5.right = node6;
+		
+		System.out.println(LongestUnivaluePath.longestUnivaluePath(root));
 	}
 	
 	public static void leetCodeN762(){
