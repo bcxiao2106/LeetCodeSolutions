@@ -35,12 +35,14 @@ public class main {
 		//leetCodeN22();		//22 Generate Parentheses 
 		//leetCodeN23();			//23 Merge k Sorted Lists
 		//leetCodeN29();			//29 Divide two integers
+		//leetCodeN204();				//204 Count Primes
 		//leetCodeN388();				//388 Longest Absolute File Path
-		leetCodeN393();			//393 UTF-8 Validation
+		//leetCodeN393();			//393 UTF-8 Validation
 		//leetCodeN441();
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN481();			//481 Magical String
 		//leetCodeN535();			//535 Encode and Decode TinyURL
+		leetCodeN543();				//543 Diameter of Binary Tree
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
 		//leetCodeN686();			//686 Repeated String Match
@@ -448,6 +450,10 @@ public class main {
 		System.out.println(DivideTwoIntegers.divide(2147483647, 2));
 	}
 	
+	public static void leetCodeN204(){
+		System.out.println(CountPrimes.countPrimes(998));
+	}
+	
 	public static void leetCodeN388(){
 		LongestAbsoluteFilePath.lengthLongestPath("");
 	}
@@ -485,6 +491,12 @@ public class main {
 	public static void leetCodeN535(){
 		DesignTinyURL dtu = new DesignTinyURL();
 		System.out.println(dtu.decode(dtu.encode("https://leetcode.com/problems/design-tinyurl")));
+	}
+	
+	public static void leetCodeN543() {
+		Integer[] nodes = {1,2,3,4,5,null,null};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		DiameterofBinaryTree.diameterOfBinaryTree(root);
 	}
 	
 	/*
