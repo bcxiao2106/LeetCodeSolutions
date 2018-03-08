@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import Array.BestTimetoBuyandSellStockII;
 import Array.FourSum;
+import Array.MaximumSubarray;
 import Array.ReverseInteger;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
@@ -33,21 +35,26 @@ public class main {
 		//leetCodeN20();		//20 Valid Parentheses
 		//leetCodeN21();		//21 Merge Two Sorted Lists	
 		//leetCodeN22();		//22 Generate Parentheses 
-		//leetCodeN23();			//23 Merge k Sorted Lists
-		//leetCodeN29();			//29 Divide two integers
-		//leetCodeN204();				//204 Count Primes
-		//leetCodeN388();				//388 Longest Absolute File Path
-		//leetCodeN393();			//393 UTF-8 Validation
-		//leetCodeN441();
+		//leetCodeN23();		//23 Merge k Sorted Lists
+		//leetCodeN29();		//29 Divide two integers
+		//leetCodeN31();		//31 Next Permutation
+		//leetCodeN38();		//38 Count and Say
+		//leetCodeN53();		//53 Maximum Subarray
+		leetCodeN70();			//70 Climbing Stairs
+		//leetCodeN122();		//Best Time to Buy and Sell Stock II
+		//leetCodeN204();		//204 Count Primes
+		//leetCodeN388();		//388 Longest Absolute File Path
+		//leetCodeN393();		//393 UTF-8 Validation
+		//leetCodeN441();		//441 Arranging Coins
 		//leetCodeN461();		//461 Hamming Distance
-		//leetCodeN481();			//481 Magical String
-		//leetCodeN535();			//535 Encode and Decode TinyURL
-		leetCodeN543();				//543 Diameter of Binary Tree
+		//leetCodeN481();		//481 Magical String
+		//leetCodeN535();		//535 Encode and Decode TinyURL
+		//leetCodeN543();			//543 Diameter of Binary Tree
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
-		//leetCodeN686();			//686 Repeated String Match
-		//leetCodeN687();			//687 Longest Univalue Path
-		//leetCodeN762();			//762 Prime Number of Set Bits in Binary Representation
+		//leetCodeN686();		//686 Repeated String Match
+		//leetCodeN687();		//687 Longest Univalue Path
+		//leetCodeN762();		//762 Prime Number of Set Bits in Binary Representation
 		//binaryTreeSample();
 		//ClockAngle();
 		//System.out.println(Integer.toBinaryString(-128));
@@ -57,6 +64,19 @@ public class main {
 			System.out.println(Integer.toBinaryString(a) + " = " + a);
 			a = a << 1;
 		}
+		
+		System.out.printf("%f,%b", Math.PI, Math.E);
+		System.out.printf("%1$s %s %s", "A", "B", "C"); 
+		System.out.println(8 + "9");
+		System.out.printf("%1$s %2$s %s", "A", "B", "C"); 
+		System.out.printf("\"$%(,13.2f\n\"", -1222.2);
+		System.out.printf("\"%d\"", 100);
+		System.out.printf("\"%-5c\"", 'c');
+		System.out.printf("%b", 0);
+		System.out.printf("%s", new Object());
+		//System.out.printf("\"%f\"", -100);
+		System.out.printf("\"%c\"", new Character('d'));
+		System.out.printf("%f", -100.0);
 		*/
 	}
 	
@@ -448,6 +468,30 @@ public class main {
 	
 	public static void leetCodeN29(){
 		System.out.println(DivideTwoIntegers.divide(2147483647, 2));
+	}
+	
+	public static void leetCodeN31() {
+		NextPermutation.nextPermutation(new int[] {1,2,3});
+	}
+	
+	public static void leetCodeN38() {
+		CountandSay.countAndSay(7);
+	}
+	
+	public static void leetCodeN53() {
+		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+		int[] nums2 = {-1,-2,-3};
+		int[] test = nums;
+		System.out.println(MaximumSubarray.maxSubArray(test));
+	}
+	
+	public static void leetCodeN70() {
+		ClimbingStairs.calculateSteps(35);
+		//ClimbingStairs.factorial(5);
+	}
+	
+	public static void leetCodeN122(){
+		BestTimetoBuyandSellStockII.maxProfit(new int[] {5,1,3,2,1,5,3,5});
 	}
 	
 	public static void leetCodeN204(){
