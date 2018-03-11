@@ -40,7 +40,11 @@ public class main {
 		//leetCodeN31();		//31 Next Permutation
 		//leetCodeN38();		//38 Count and Say
 		//leetCodeN53();		//53 Maximum Subarray
-		leetCodeN70();			//70 Climbing Stairs
+		//leetCodeN70();		//70 Climbing Stairs
+		//leetCodeN101();		//101 Symmetric Tree
+		//leetCodeN104();		//104 Maximum Depth of Binary Tree
+		//leetCodeN107();			//107 Binary Tree Level Order Traversal II
+		leetCodeN108();			//108 Convert Sorted Array to Binary Search Tree
 		//leetCodeN122();		//Best Time to Buy and Sell Stock II
 		//leetCodeN204();		//204 Count Primes
 		//leetCodeN388();		//388 Longest Absolute File Path
@@ -488,6 +492,30 @@ public class main {
 	public static void leetCodeN70() {
 		ClimbingStairs.calculateSteps(35);
 		//ClimbingStairs.factorial(5);
+	}
+	
+	public static void leetCodeN101() {
+		Integer[] nodes = {1,2,2,3,4,4,3};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		SymmetricTree.isSymmetric(root);
+	}
+	
+	public static void leetCodeN104() {
+		Integer[] nodes = {1,2,2,3,4,4,3};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		System.out.println(MaximumDepthofBinaryTree.maxDepth(root));
+	}
+	
+	public static void leetCodeN107() {
+		Integer[] nodes = {1,2,2,3,4,4,3};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		BinaryTreeLevelOrderTraversalII.levelOrderBottom(root);
+	}
+	
+	public static void leetCodeN108() {
+		int[] nums = {-10,-5,0,5,9};
+		TreeNode root = ConvertSortedArraytoBinarySearchTree.sortedArrayToBST(nums);
+		TreeNode.levelTraverse(root);
 	}
 	
 	public static void leetCodeN122(){

@@ -1,5 +1,7 @@
 package util;
 
+import java.util.LinkedList;
+
 public class TreeNode {
 	public int val;
 	public TreeNode left;
@@ -26,6 +28,17 @@ public class TreeNode {
 		if(r < nodes.length && nodes[r] != null) {
 			node.right = new TreeNode(nodes[r]);
 			buildBinaryTree(nodes, node.right, r);
+		}
+	}
+	
+	public static void levelTraverse(TreeNode root) {
+		LinkedList<TreeNode> q = new LinkedList<TreeNode>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			TreeNode currNode = q.poll();
+			System.out.print(currNode.val + ", ");
+			if(currNode.left != null) q.add(currNode.left);
+			if(currNode.right != null) q.add(currNode.right);
 		}
 	}
 }
