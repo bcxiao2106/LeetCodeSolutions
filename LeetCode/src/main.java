@@ -3,9 +3,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import Array.BestTimetoBuyandSellStockII;
+import Array.ExcelSheetColumnTitle;
 import Array.FourSum;
 import Array.MaximumSubarray;
 import Array.ReverseInteger;
+import Array.RotateArray;
 import Array.ThreeSumClosest;
 import Array.ThreeSumII;
 import String.*;
@@ -43,9 +45,15 @@ public class main {
 		//leetCodeN70();		//70 Climbing Stairs
 		//leetCodeN101();		//101 Symmetric Tree
 		//leetCodeN104();		//104 Maximum Depth of Binary Tree
-		//leetCodeN107();			//107 Binary Tree Level Order Traversal II
-		leetCodeN108();			//108 Convert Sorted Array to Binary Search Tree
-		//leetCodeN122();		//Best Time to Buy and Sell Stock II
+		//leetCodeN107();		//107 Binary Tree Level Order Traversal II
+		//leetCodeN108();		//108 Convert Sorted Array to Binary Search Tree
+		//leetCodeN112();		//112 Path Sum
+		//leetCodeN113();		//113 Path Sum II
+		//leetCodeN122();		//122 Best Time to Buy and Sell Stock II
+		//leetCodeN160();		//160 Intersection of Two Linked Lists
+		//leetCodeN168();		//168 Excel Sheet Column Title
+		//leetCodeN189();		//189 Rotate Array
+		leetCodeN190();			//190 Reverse Bits
 		//leetCodeN204();		//204 Count Primes
 		//leetCodeN388();		//388 Longest Absolute File Path
 		//leetCodeN393();		//393 UTF-8 Validation
@@ -53,7 +61,7 @@ public class main {
 		//leetCodeN461();		//461 Hamming Distance
 		//leetCodeN481();		//481 Magical String
 		//leetCodeN535();		//535 Encode and Decode TinyURL
-		//leetCodeN543();			//543 Diameter of Binary Tree
+		//leetCodeN543();		//543 Diameter of Binary Tree
 		//leetCodeN617();		//617 Merge Two Binary Trees
 		//leetCodeN657();		//657 Judge Route Circle
 		//leetCodeN686();		//686 Repeated String Match
@@ -518,8 +526,62 @@ public class main {
 		TreeNode.levelTraverse(root);
 	}
 	
+	public static void leetCodeN112() {
+		Integer[] nodes = {5,4,8,11,null,13,4,7,2,null,null,null,1};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		int sum = 22;
+		System.out.println(PathSum.hasPathSum(root, sum));
+	}
+	
+	public static void leetCodeN113() {
+		Integer[] nodes = {5,4,8,11,null,13,4,7,2,null,null,5,1};
+		TreeNode root = TreeNode.buildBinaryTree(nodes);
+		int sum = 22;
+		List<List<Integer>> resultList = PathSumII.pathSum(root, sum);
+		for(List<Integer> temp : resultList) {
+			System.out.println(temp.toString());
+		}
+	}
+	
 	public static void leetCodeN122(){
 		BestTimetoBuyandSellStockII.maxProfit(new int[] {5,1,3,2,1,5,3,5});
+	}
+	
+	public static void leetCodeN160() {
+		ListNode nodeA1 = new ListNode(11);
+		ListNode nodeA2 = new ListNode(12);
+		ListNode nodeB1 = new ListNode(21);
+		ListNode nodeB2 = new ListNode(22);
+		ListNode nodeB3 = new ListNode(23);
+		ListNode nodeC1 = new ListNode(31);
+		ListNode nodeC2 = new ListNode(32);
+		ListNode nodeC3 = new ListNode(33);
+		
+		nodeA1.next = nodeA2;
+		nodeA2.next = nodeC1;
+		nodeB1.next = nodeB2;
+		nodeB2.next = nodeB3;
+		nodeB3.next = nodeC1;
+		nodeC1.next = nodeC2;
+		nodeC2.next = nodeC3;
+		
+		IntersectionofTwoLinkedLists.getIntersectionNode(nodeA1, nodeB1);
+	}
+	
+	public static void leetCodeN168() {
+		ExcelSheetColumnTitle.convertToTitle(702);
+	}
+	
+	public static void leetCodeN189(){
+		int[] nums = {1,2,3,4,5,6,7,8,9};
+		int k = 5;
+		RotateArray.rotate(nums, k);
+		System.out.println(Arrays.toString(nums));
+	}
+	
+	public static void leetCodeN190() {
+		int n = 32;
+		System.out.println(ReverseBits.reverseBits(n));
 	}
 	
 	public static void leetCodeN204(){
